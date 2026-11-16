@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://candelavazquezfontal.github.io/sitemap.xml
