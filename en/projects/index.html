@@ -26,9 +26,8 @@
 <meta name="twitter:description" content="Projects by Candela Vázquez Fontal: queueing simulation for Zara mega-stores, the EcoPlay business model and the International Baccalaureate extended essay.">
 <meta name="twitter:image" content="https://candelavazquezfontal.github.io/og-image.png">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preload" href="/fonts/BricolageGrotesque-800-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 /* Concepto: web como albarán de transporte. Cada sección es una hoja aparte; filas de manifiesto con fechas, códigos y separadores punteados tipo perforación. */
 :root{
@@ -94,10 +93,10 @@ button.chip[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)
 button.chip[aria-pressed="true"] span{color:var(--on-accent)}
 .seek{padding-block:32px;border-top:1px dashed var(--line)}
 .seek p:not(.mono){margin:6px 0 14px;max-width:62ch;font-size:17px}
-.doors{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--fg)}
-.doors a{display:block;padding:18px 18px 18px 0;text-decoration:none;color:var(--fg);border-bottom:1px dashed var(--line)}
-.doors a+a{padding-left:18px;border-left:1px dashed var(--line)}
-.doors b{display:block;font:700 22px var(--f-display);margin-top:6px}
+.doors{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--fg)}
+.doors a{display:block;padding:18px 14px 18px 0;text-decoration:none;color:var(--fg);border-bottom:1px dashed var(--line)}
+.doors a+a{padding-left:14px;border-left:1px dashed var(--line)}
+.doors b{display:block;font:700 20px var(--f-display);margin-top:6px}
 .doors span.go{color:var(--accent);font-size:14px}
 .doors a:hover b{color:var(--accent)}
 
@@ -171,23 +170,51 @@ nav .wrap .navr{display:flex;gap:10px 14px;align-items:center;flex-wrap:wrap}
   nav .wrap .navr ul{order:3;flex-basis:100%}
 }
 
+/* Más allá del CV */
+.beyond{display:flex;gap:22px;align-items:center;margin:0 0 26px;flex-wrap:wrap}
+.beyond img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:1px dashed var(--line);padding:4px;background:var(--surface)}
+.beyond .lead2{margin:0;max-width:52ch;font-size:18px;color:var(--muted);flex:1 1 260px}
+h5.mini{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+ul.books{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+ul.books b{font-family:var(--f-display);font-size:16px}
+ul.books span{color:var(--muted);font-size:14px}
+.tl>li>.mono{padding-top:3px}
+@media (min-width:761px) and (max-width:900px){.doors{grid-template-columns:repeat(2,1fr)}.doors a:nth-child(3){padding-left:0;border-left:0}}
+
+.jump{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 24px}
+.jump .mono{margin-right:4px}
+.jump a{font:500 13px var(--f-body);padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);text-decoration:none}
+.jump a:hover{border-color:var(--accent);color:var(--accent)}
+[id]{scroll-margin-top:84px}
+.view h2.sub{font-size:22px;font-weight:700;margin:36px 0 12px}
+.view h2.sub:first-of-type{margin-top:0}
+.lilink{display:inline-flex;align-items:center;gap:7px}
+.lilink svg{flex:0 0 auto}
+
+.mono.sect a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
+.mono.sect a:hover{color:var(--accent);border-color:var(--accent)}
+.chips li a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent)}
+.chips li a:hover{color:var(--accent)}
+.view-head .sect{max-width:46ch;text-align:right}
+@media (max-width:760px){.view-head .sect{text-align:left}}
+
 </style>
 </head>
 <body>
-<nav aria-label="Sections"><div class="wrap"><a href="/en/" style="text-decoration:none;color:inherit"><b>C. Vázquez Fontal</b></a><div class="navr"><ul><li><a href="/en/">Home</a></li><li><a href="/en/experience/">Experience</a></li><li><a href="/en/projects/" aria-current="page">Projects</a></li><li><a href="/en/certifications/">Certifications</a></li><li><a href="/en/contact/">Contact</a></li></ul><div class="langsw" role="group" aria-label="Language"><a href="/proyectos/" hreflang="es" lang="es" data-setlang="es">ES</a><span aria-current="true" lang="en">EN</span></div></div></div></nav>
+<nav aria-label="Sections"><div class="wrap"><a href="/en/" style="text-decoration:none;color:inherit"><b>C. Vázquez Fontal</b></a><div class="navr"><ul><li><a href="/en/">Home</a></li><li><a href="/en/experience/">Experience</a></li><li><a href="/en/projects/" aria-current="page">Projects</a></li><li><a href="/en/certifications/">Certifications</a></li><li><a href="/en/beyond-the-cv/">Beyond the CV</a></li><li><a href="/en/contact/">Contact</a></li></ul><div class="langsw" role="group" aria-label="Language"><a href="/proyectos/" hreflang="es" lang="es" data-setlang="es">ES</a><span aria-current="true" lang="en">EN</span></div></div></div></nav>
 <main class="wrap">
 <section class="view" id="v-proyectos">
-  <div class="view-head"><h1 style="font-size:clamp(32px,6vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1">Projects</h1><span class="mono">Open each one to expand</span></div>
+  <div class="view-head"><h1 style="font-size:clamp(32px,6vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1">Projects</h1><span class="mono sect"><a href="#prj-001">Zara</a> · <a href="#prj-002">EcoPlay</a> · <a href="#prj-003">Extended essay</a></span></div>
   <div class="tools" id="proj-area" role="group" aria-label="Project area"><span class="mono lab">Area</span><button type="button" class="chip" data-f="all" aria-pressed="true">All<span>3</span></button><button type="button" class="chip" data-f="opt" aria-pressed="false">Optimisation<span>1</span></button><button type="button" class="chip" data-f="log" aria-pressed="false">Logistics<span>1</span></button><button type="button" class="chip" data-f="data" aria-pressed="false">Data<span>1</span></button><button type="button" class="chip" data-f="cost" aria-pressed="false">Costs<span>1</span></button><button type="button" class="chip" data-f="biz" aria-pressed="false">Business<span>1</span></button></div>
   <span class="mono count" id="proj-count" aria-live="polite"></span>
   <div id="proj-list">
 <details class="proj" id="prj-001" data-areas="opt log data"><summary><span class="mono">PRJ-001</span><div><h2 style="font-size:20px;font-weight:700">Queueing and Simulation: Zara mega-stores</h2><div class="meta">Optimization and Simulation · Deusto · Feb – May 2026 · group project (3 people)</div></div><span class="plus" aria-hidden="true">+</span></summary><div class="proj-body"><span></span><div class="in"><div class="wide"><span class="honor">Course with Matrícula de Honor</span></div><div class="wide"><h4>Problem</h4><p>Course project on the online-order pickup and packing process of Zara mega-stores.</p></div><div class="wide"><h4>What was done</h4><p>Modelled the process as a multi-server queue, comparing a single mega-store with five distributed stores, and simulated a full year of operation (777,780 orders).</p></div><div class="wide"><h4>My part</h4><p>Group project, 3 people.</p></div><div class="wide"><h4>Results</h4><ul><li>System saturated in the 16:00–21:00 slot in both scenarios and unable to recover its backlog (−795 and −390 orders/day).</li><li>One-year simulation: 62.58% of orders served and 290,030 lost sales, all in the overnight slot.</li><li>Proposal: notify customers of delays, cap the online order queue and add afternoon and night capacity.</li></ul></div><div><h4>Tools and methods</h4><div class="tags"><span>Queueing theory</span><span>Simulation</span></div></div><div><h4>Areas</h4><div class="tags"><span>Optimisation</span><span>Logistics</span><span>Data</span></div></div></div></div></details>
 <details class="proj" id="prj-002" data-areas="cost biz"><summary><span class="mono">PRJ-002</span><div><h2 style="font-size:20px;font-weight:700">EcoPlay: circular toy subscription</h2><div class="meta">Product Engineering · Deusto · Sep 2025 – Jan 2026 · group project (3 people)</div></div><span class="plus" aria-hidden="true">+</span></summary><div class="proj-body"><span></span><div class="in"><div class="wide"><span class="honor">Course with Matrícula de Honor</span></div><div class="wide"><h4>Problem</h4><p>Business model for a subscription service of refurbished toys.</p></div><div class="wide"><h4>What was done</h4><p>Business Model Canvas and Value Proposition Canvas, economic model, and a validation test with 7 critical hypotheses and 4 customer interviews.</p></div><div class="wide"><h4>My part</h4><p>Group project, 3 people.</p></div><div class="wide"><h4>Results</h4><ul><li>Break-even at 411 active monthly subscribers and a €25,000 net profit target in year 3.</li><li>€13 variable cost per customer and plans at €19.90, €25.90 and €34.90 a month.</li><li>Validation: 80% understood the concept and asked about delivery times, with no reason found to pivot.</li></ul></div><div><h4>Tools and methods</h4><div class="tags"><span>Business Model Canvas</span><span>Value Proposition Canvas</span><span>Cost analysis</span><span>Interviews</span></div></div><div><h4>Areas</h4><div class="tags"><span>Costs</span><span>Business</span></div></div></div></div></details>
-<details class="proj" id="prj-003" data-areas=""><summary><span class="mono">PRJ-003</span><div><h2 style="font-size:20px;font-weight:700">International Baccalaureate Extended Essay</h2><div class="meta">Spanish literature · Jan 2022 – Mar 2023</div></div><span class="plus" aria-hidden="true">+</span></summary><div class="proj-body"><span></span><div class="in"><div class="wide"><h4>Problem</h4><p>The extended essay is the capstone of the IB Diploma: independent research on a topic chosen by the student.</p></div><div class="wide"><h4>What was done</h4><p>Guided research and academic writing on Spanish-language literature, chosen out of my interest in reading.</p></div><div class="wide"><h4>My part</h4><p>Individual work.</p></div><div class="wide"><h4>Results</h4><ul><li>Extended essay submitted and assessed.</li></ul></div><div><h4>Tools and methods</h4><div class="tags"><span>Research</span><span>Project planning</span><span>Academic writing</span></div></div></div></div></details>
+<details class="proj" id="prj-003" data-areas=""><summary><span class="mono">PRJ-003</span><div><h2 style="font-size:20px;font-weight:700">International Baccalaureate Extended Essay</h2><div class="meta">Spanish and English literature · Jan 2022 – Mar 2023</div></div><span class="plus" aria-hidden="true">+</span></summary><div class="proj-body"><span></span><div class="in"><div class="wide"><h4>Problem</h4><p>The extended essay is the capstone of the IB Diploma: independent research on a topic chosen by the student.</p></div><div class="wide"><h4>What was done</h4><p>Guided research and academic writing on Spanish and English literature, chosen out of my interest in reading.</p></div><div class="wide"><h4>My part</h4><p>Individual work.</p></div><div class="wide"><h4>Results</h4><ul><li>Extended essay submitted and assessed.</li></ul></div><div><h4>Tools and methods</h4><div class="tags"><span>Research</span><span>Project planning</span><span>Academic writing</span></div></div></div></div></details>
   </div>
 </section>
 </main>
-<div class="wrap"><footer><span>Candela Vázquez Fontal · 2026</span><a href="https://www.linkedin.com/in/candela-v%C3%A1zquez-fontal" target="_blank" rel="noopener">LinkedIn</a></footer></div>
+<div class="wrap"><footer><span>Candela Vázquez Fontal · 2026</span><a class="lilink" href="https://www.linkedin.com/in/candela-vazquez-fontal" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></footer></div>
 <script>
 try{document.querySelectorAll("[data-setlang]").forEach(function(a){a.addEventListener("click",function(){localStorage.setItem("lang",a.dataset.setlang)})})}catch(_){}
 (function(){
@@ -196,7 +223,8 @@ try{document.querySelectorAll("[data-setlang]").forEach(function(a){a.addEventLi
   function apply(f){var n=0;items.forEach(function(d){var ok=f==="all"||(d.dataset.areas||"").split(" ").indexOf(f)>-1;d.hidden=!ok;if(ok)n++});
     chips.forEach(function(c){c.setAttribute("aria-pressed",c.dataset.f===f)});cnt.textContent=T.replace("{a}",n).replace("{b}",N)}
   chips.forEach(function(c){c.onclick=function(){apply(c.dataset.f)}});apply("all");
-  if(location.hash){var t=document.querySelector(location.hash);if(t&&t.tagName==="DETAILS")t.open=true}
+  function openHash(){if(location.hash){var t=document.querySelector(location.hash);if(t&&t.tagName==="DETAILS"){t.hidden=false;t.open=true;t.scrollIntoView()}}}
+  window.addEventListener("hashchange",openHash);openHash();
 })();
 </script>
 </body>

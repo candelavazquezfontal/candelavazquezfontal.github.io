@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Contacto · Candela Vázquez Fontal</title>
-<meta name="description" content="Contacto de Candela Vázquez Fontal: LinkedIn y correo electrónico.">
+<meta name="description" content="Contacto de Candela Vázquez Fontal: LinkedIn, correo electrónico y CV en PDF.">
 <meta name="author" content="Candela Vázquez Fontal">
 <link rel="canonical" href="https://candelavazquezfontal.github.io/contacto/">
 <link rel="alternate" hreflang="es" href="https://candelavazquezfontal.github.io/contacto/">
@@ -15,7 +15,7 @@
 <meta property="og:locale:alternate" content="en_GB">
 <meta property="og:site_name" content="Candela Vázquez Fontal">
 <meta property="og:title" content="Contacto · Candela Vázquez Fontal">
-<meta property="og:description" content="Contacto de Candela Vázquez Fontal: LinkedIn y correo electrónico.">
+<meta property="og:description" content="Contacto de Candela Vázquez Fontal: LinkedIn, correo electrónico y CV en PDF.">
 <meta property="og:url" content="https://candelavazquezfontal.github.io/contacto/">
 <meta property="og:image" content="https://candelavazquezfontal.github.io/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -23,12 +23,11 @@
 <meta property="og:image:alt" content="Candela Vázquez Fontal, Ingeniería en Organización Industrial. Operaciones, logística y datos.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contacto · Candela Vázquez Fontal">
-<meta name="twitter:description" content="Contacto de Candela Vázquez Fontal: LinkedIn y correo electrónico.">
+<meta name="twitter:description" content="Contacto de Candela Vázquez Fontal: LinkedIn, correo electrónico y CV en PDF.">
 <meta name="twitter:image" content="https://candelavazquezfontal.github.io/og-image.png">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preload" href="/fonts/BricolageGrotesque-800-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 /* Concepto: web como albarán de transporte. Cada sección es una hoja aparte; filas de manifiesto con fechas, códigos y separadores punteados tipo perforación. */
 :root{
@@ -94,10 +93,10 @@ button.chip[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)
 button.chip[aria-pressed="true"] span{color:var(--on-accent)}
 .seek{padding-block:32px;border-top:1px dashed var(--line)}
 .seek p:not(.mono){margin:6px 0 14px;max-width:62ch;font-size:17px}
-.doors{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--fg)}
-.doors a{display:block;padding:18px 18px 18px 0;text-decoration:none;color:var(--fg);border-bottom:1px dashed var(--line)}
-.doors a+a{padding-left:18px;border-left:1px dashed var(--line)}
-.doors b{display:block;font:700 22px var(--f-display);margin-top:6px}
+.doors{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--fg)}
+.doors a{display:block;padding:18px 14px 18px 0;text-decoration:none;color:var(--fg);border-bottom:1px dashed var(--line)}
+.doors a+a{padding-left:14px;border-left:1px dashed var(--line)}
+.doors b{display:block;font:700 20px var(--f-display);margin-top:6px}
 .doors span.go{color:var(--accent);font-size:14px}
 .doors a:hover b{color:var(--accent)}
 
@@ -171,24 +170,58 @@ nav .wrap .navr{display:flex;gap:10px 14px;align-items:center;flex-wrap:wrap}
   nav .wrap .navr ul{order:3;flex-basis:100%}
 }
 
+/* Más allá del CV */
+.beyond{display:flex;gap:22px;align-items:center;margin:0 0 26px;flex-wrap:wrap}
+.beyond img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:1px dashed var(--line);padding:4px;background:var(--surface)}
+.beyond .lead2{margin:0;max-width:52ch;font-size:18px;color:var(--muted);flex:1 1 260px}
+h5.mini{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+ul.books{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+ul.books b{font-family:var(--f-display);font-size:16px}
+ul.books span{color:var(--muted);font-size:14px}
+.tl>li>.mono{padding-top:3px}
+@media (min-width:761px) and (max-width:900px){.doors{grid-template-columns:repeat(2,1fr)}.doors a:nth-child(3){padding-left:0;border-left:0}}
+
+.jump{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 24px}
+.jump .mono{margin-right:4px}
+.jump a{font:500 13px var(--f-body);padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);text-decoration:none}
+.jump a:hover{border-color:var(--accent);color:var(--accent)}
+[id]{scroll-margin-top:84px}
+.view h2.sub{font-size:22px;font-weight:700;margin:36px 0 12px}
+.view h2.sub:first-of-type{margin-top:0}
+.lilink{display:inline-flex;align-items:center;gap:7px}
+.lilink svg{flex:0 0 auto}
+
+.mono.sect a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
+.mono.sect a:hover{color:var(--accent);border-color:var(--accent)}
+.chips li a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent)}
+.chips li a:hover{color:var(--accent)}
+.view-head .sect{max-width:46ch;text-align:right}
+@media (max-width:760px){.view-head .sect{text-align:left}}
+
 </style>
 </head>
 <body>
-<nav aria-label="Secciones"><div class="wrap"><a href="/" style="text-decoration:none;color:inherit"><b>C. Vázquez Fontal</b></a><div class="navr"><ul><li><a href="/">Inicio</a></li><li><a href="/trayectoria/">Trayectoria</a></li><li><a href="/proyectos/">Proyectos</a></li><li><a href="/certificaciones/">Certificaciones</a></li><li><a href="/contacto/" aria-current="page">Contacto</a></li></ul><div class="langsw" role="group" aria-label="Idioma"><span aria-current="true" lang="es">ES</span><a href="/en/contact/" hreflang="en" lang="en" data-setlang="en">EN</a></div></div></div></nav>
+<nav aria-label="Secciones"><div class="wrap"><a href="/" style="text-decoration:none;color:inherit"><b>C. Vázquez Fontal</b></a><div class="navr"><ul><li><a href="/">Inicio</a></li><li><a href="/trayectoria/">Trayectoria</a></li><li><a href="/proyectos/">Proyectos</a></li><li><a href="/certificaciones/">Certificaciones</a></li><li><a href="/mas-alla-del-cv/">Más allá del CV</a></li><li><a href="/contacto/" aria-current="page">Contacto</a></li></ul><div class="langsw" role="group" aria-label="Idioma"><span aria-current="true" lang="es">ES</span><a href="/en/contact/" hreflang="en" lang="en" data-setlang="en">EN</a></div></div></div></nav>
 <main class="wrap">
 <section class="view" id="v-contacto">
-  <div class="view-head"><h1 style="font-size:clamp(32px,6vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1">Contacto</h1><span class="mono">Escríbeme</span></div>
-  <p style="margin:0 0 18px;max-width:56ch">Estoy abierta a conversaciones sobre operaciones, logística y proyectos de mejora con datos.</p>
+  <div class="view-head"><h1 style="font-size:clamp(32px,6vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1">Contacto</h1><span class="mono sect"><a href="#escribeme">Escríbeme</a> · <a href="#cv">CV en PDF</a></span></div>
+  <p id="escribeme" style="margin:0 0 18px;max-width:56ch">Estoy abierta a conversaciones sobre operaciones, logística y proyectos de mejora con datos.</p>
   <div class="cta" style="margin-top:0">
     <button class="btn" id="copy-mail" type="button">Copiar correo</button>
-    <a class="btn ghost" href="https://www.linkedin.com/in/candela-v%C3%A1zquez-fontal" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn ghost lilink" href="https://www.linkedin.com/in/candela-vazquez-fontal" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
   </div>
-  <p style="margin:14px 0 0">Correo: <span id="mail" style="user-select:all">candelavfontal@gmail.com</span></p>
+  <p style="margin:14px 0 0">Correo: <span id="mail" data-e="bW9jLmxpYW1nQGxhdG5vZnZhbGVkbmFj" style="user-select:all"></span><noscript>Activa JavaScript para ver el correo o escríbeme por LinkedIn.</noscript></p>
+  <h2 class="sub" id="cv" style="font-size:20px;margin:34px 0 10px">CV en PDF</h2>
+  <div class="cta" style="margin-top:0">
+    <a class="btn ghost" href="/cv/Candela-Vazquez-Fontal-CV-ES.pdf" target="_blank" rel="noopener">CV en español</a>
+    <a class="btn ghost" href="/cv/Candela-Vazquez-Fontal-CV-EN.pdf" target="_blank" rel="noopener">CV en inglés</a>
+  </div>
 </section>
 </main>
-<div class="wrap"><footer><span>Candela Vázquez Fontal · 2026</span><a href="https://www.linkedin.com/in/candela-v%C3%A1zquez-fontal" target="_blank" rel="noopener">LinkedIn</a></footer></div>
+<div class="wrap"><footer><span>Candela Vázquez Fontal · 2026</span><a class="lilink" href="https://www.linkedin.com/in/candela-vazquez-fontal" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></footer></div>
 <script>
 try{document.querySelectorAll("[data-setlang]").forEach(function(a){a.addEventListener("click",function(){localStorage.setItem("lang",a.dataset.setlang)})})}catch(_){}
+(function(){var m=document.getElementById("mail");m.textContent=atob(m.dataset.e).split("").reverse().join("")})();
 document.getElementById("copy-mail").onclick=async function(ev){
   var b=ev.currentTarget,txt=document.getElementById("mail").textContent;
   try{await navigator.clipboard.writeText(txt);b.textContent="Correo copiado"}

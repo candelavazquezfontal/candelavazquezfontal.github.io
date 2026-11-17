@@ -26,9 +26,8 @@
 <meta name="twitter:description" content="Experiencia, formación, reconocimientos y vida universitaria de Candela Vázquez Fontal: IDOM, Universidad de Deusto, LSE, CBS y Universidad de Oviedo.">
 <meta name="twitter:image" content="https://candelavazquezfontal.github.io/og-image.png">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preload" href="/fonts/BricolageGrotesque-800-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 /* Concepto: web como albarán de transporte. Cada sección es una hoja aparte; filas de manifiesto con fechas, códigos y separadores punteados tipo perforación. */
 :root{
@@ -94,10 +93,10 @@ button.chip[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)
 button.chip[aria-pressed="true"] span{color:var(--on-accent)}
 .seek{padding-block:32px;border-top:1px dashed var(--line)}
 .seek p:not(.mono){margin:6px 0 14px;max-width:62ch;font-size:17px}
-.doors{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--fg)}
-.doors a{display:block;padding:18px 18px 18px 0;text-decoration:none;color:var(--fg);border-bottom:1px dashed var(--line)}
-.doors a+a{padding-left:18px;border-left:1px dashed var(--line)}
-.doors b{display:block;font:700 22px var(--f-display);margin-top:6px}
+.doors{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--fg)}
+.doors a{display:block;padding:18px 14px 18px 0;text-decoration:none;color:var(--fg);border-bottom:1px dashed var(--line)}
+.doors a+a{padding-left:14px;border-left:1px dashed var(--line)}
+.doors b{display:block;font:700 20px var(--f-display);margin-top:6px}
 .doors span.go{color:var(--accent);font-size:14px}
 .doors a:hover b{color:var(--accent)}
 
@@ -171,36 +170,64 @@ nav .wrap .navr{display:flex;gap:10px 14px;align-items:center;flex-wrap:wrap}
   nav .wrap .navr ul{order:3;flex-basis:100%}
 }
 
+/* Más allá del CV */
+.beyond{display:flex;gap:22px;align-items:center;margin:0 0 26px;flex-wrap:wrap}
+.beyond img{width:140px;height:140px;border-radius:50%;object-fit:cover;border:1px dashed var(--line);padding:4px;background:var(--surface)}
+.beyond .lead2{margin:0;max-width:52ch;font-size:18px;color:var(--muted);flex:1 1 260px}
+h5.mini{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+ul.books{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px}
+ul.books b{font-family:var(--f-display);font-size:16px}
+ul.books span{color:var(--muted);font-size:14px}
+.tl>li>.mono{padding-top:3px}
+@media (min-width:761px) and (max-width:900px){.doors{grid-template-columns:repeat(2,1fr)}.doors a:nth-child(3){padding-left:0;border-left:0}}
+
+.jump{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 24px}
+.jump .mono{margin-right:4px}
+.jump a{font:500 13px var(--f-body);padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);text-decoration:none}
+.jump a:hover{border-color:var(--accent);color:var(--accent)}
+[id]{scroll-margin-top:84px}
+.view h2.sub{font-size:22px;font-weight:700;margin:36px 0 12px}
+.view h2.sub:first-of-type{margin-top:0}
+.lilink{display:inline-flex;align-items:center;gap:7px}
+.lilink svg{flex:0 0 auto}
+
+.mono.sect a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
+.mono.sect a:hover{color:var(--accent);border-color:var(--accent)}
+.chips li a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent)}
+.chips li a:hover{color:var(--accent)}
+.view-head .sect{max-width:46ch;text-align:right}
+@media (max-width:760px){.view-head .sect{text-align:left}}
+
 </style>
 </head>
 <body>
-<nav aria-label="Secciones"><div class="wrap"><a href="/" style="text-decoration:none;color:inherit"><b>C. Vázquez Fontal</b></a><div class="navr"><ul><li><a href="/">Inicio</a></li><li><a href="/trayectoria/" aria-current="page">Trayectoria</a></li><li><a href="/proyectos/">Proyectos</a></li><li><a href="/certificaciones/">Certificaciones</a></li><li><a href="/contacto/">Contacto</a></li></ul><div class="langsw" role="group" aria-label="Idioma"><span aria-current="true" lang="es">ES</span><a href="/en/experience/" hreflang="en" lang="en" data-setlang="en">EN</a></div></div></div></nav>
+<nav aria-label="Secciones"><div class="wrap"><a href="/" style="text-decoration:none;color:inherit"><b>C. Vázquez Fontal</b></a><div class="navr"><ul><li><a href="/">Inicio</a></li><li><a href="/trayectoria/" aria-current="page">Trayectoria</a></li><li><a href="/proyectos/">Proyectos</a></li><li><a href="/certificaciones/">Certificaciones</a></li><li><a href="/mas-alla-del-cv/">Más allá del CV</a></li><li><a href="/contacto/">Contacto</a></li></ul><div class="langsw" role="group" aria-label="Idioma"><span aria-current="true" lang="es">ES</span><a href="/en/experience/" hreflang="en" lang="en" data-setlang="en">EN</a></div></div></div></nav>
 <main class="wrap">
 <section class="view" id="v-trayectoria">
-  <div class="view-head"><h1 style="font-size:clamp(32px,6vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1">Trayectoria</h1><span class="mono">Experiencia · formación · reconocimientos</span></div>
-  <h2 class="sub">Experiencia</h2>
+  <div class="view-head"><h1 style="font-size:clamp(32px,6vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1">Trayectoria</h1><span class="mono sect"><a href="#experiencia">Experiencia</a> · <a href="#formacion">Formación</a> · <a href="#reconocimientos">Reconocimientos</a> · <a href="#vida-universitaria">Vida universitaria</a></span></div>
+  <h2 class="sub" id="experiencia">Experiencia</h2>
   <ol class="tl">
-    <li><span class="mono">Sep 2026 – hoy</span><div><h4>Becaria de transformación digital</h4><span class="org">IDOM Consulting, Engineering, Architecture · Bilbao</span><p>Prácticas de formación dual en un proyecto de consultoría SAP para un cliente industrial del sector Oil &amp; Gas.</p><ul class="pts"><li>Soporte y evolución del módulo de calidad de SAP (QM): pruebas y documentación de nuevos campos de ensayo de calidad y conversiones de unidades, y traslado de errores reproducibles al desarrollador.</li><li>Apoyo en el despliegue en una nueva sede internacional.</li><li>Detección de mejoras de proceso.</li></ul></div></li>
+    <li><span class="mono">Sep 2026 – hoy</span><div><h4>Becaria en consultoría de transformación digital</h4><span class="org">IDOM Consulting, Engineering, Architecture · Bilbao</span><p>Prácticas de formación dual en un proyecto de consultoría SAP para un cliente industrial del sector Oil &amp; Gas.</p><ul class="pts"><li>Soporte y evolución del módulo de calidad de SAP (QM): pruebas y documentación de nuevos campos de ensayo de calidad y conversiones de unidades, y traslado de errores reproducibles al desarrollador.</li><li>Apoyo en el despliegue en una nueva sede internacional.</li><li>Detección de mejoras de proceso.</li></ul></div></li>
     <li><span class="mono">Jul – Ago 2025</span><div><h4>Auxiliar administrativo</h4><span class="org">Arminza asesores · Gijón</span><p>Contabilidad de varias empresas y particulares con software de asesoría y Excel. Presentación de modelos a Hacienda y cuentas anuales.</p></div></li>
     <li><span class="mono">Jul – Ago 2024</span><div><h4>Auxiliar administrativo</h4><span class="org">Idoneea (antes Disashop) · A Coruña</span><p>Prevención de riesgos laborales y tareas básicas de contabilidad.</p></div></li>
     <li><span class="mono">Oct – Dic 2021</span><div><h4>Profesora de ballet</h4><span class="org">Academia Paso a Dos · Gijón</span></div></li>
   </ol>
-  <h2 class="sub">Formación</h2>
+  <h2 class="sub" id="formacion">Formación</h2>
   <ol class="tl">
-    <li><span class="mono">Sep 2025 – 2027</span><div><h4>Grado en Ingeniería en Organización Industrial (bilingüe)</h4><span class="org">Universidad de Deusto</span><ul class="chips"><li>Optimización y Simulación</li><li>Logística</li><li>Production Management</li><li>Integrated Production Systems</li><li>Procesos y Gestión de la Calidad</li><li>Oficina de Gestión de Proyectos</li><li>Ingeniería del Producto</li><li>Statistics</li></ul></div></li>
-    <li><span class="mono">Ago 2026</span><div><h4>Summer School: Introductory Microeconomics</h4><span class="org">The London School of Economics and Political Science (LSE)</span><ul class="chips"><li>Microeconomía</li><li>Economía</li><li>Docencia en inglés</li></ul></div></li>
-    <li><span class="mono">Jun – Jul 2026</span><div><h4>Summer School: Principles of Macroeconomics</h4><span class="org">Copenhagen Business School (CBS)</span><ul class="chips"><li>Macroeconomía</li><li>Economía</li><li>Docencia en inglés</li></ul></div></li>
-    <li><span class="mono">Sep 2023 – Jun 2025</span><div><h4>Grado en Ingeniería en Organización Industrial (bilingüe)</h4><span class="org">Universidad de Oviedo</span><p>Dos primeros cursos, antes del traslado a Deusto para hacer la formación dual.</p><ul class="chips"><li>Strength of Materials</li><li>Graphic Expression</li><li>Grado bilingüe</li></ul></div></li>
-    <li><span class="mono">Sep 2021 – Jul 2023</span><div><h4>Bachillerato Internacional y Bachillerato tecnológico</h4><span class="org">RIES Jovellanos · Gijón</span><ul class="chips"><li>Modalidad tecnológica</li><li>Seis asignaturas del BI</li><li>Monografía</li></ul></div></li>
+    <li><span class="mono">Sep 2025 – 2027</span><div><h4>Grado en Ingeniería en Organización Industrial (bilingüe)</h4><span class="org">Universidad de Deusto</span><ul class="chips"><li>Optimización y Simulación</li><li>Logística</li><li>Production Management</li><li>Integrated Production Systems</li><li>Procesos y Gestión de la Calidad</li><li><a href="/mas-alla-del-cv/#ideas-en-construccion">Oficina de Gestión de Proyectos</a></li><li>Ingeniería del Producto</li><li>Inglés</li></ul></div></li>
+    <li><span class="mono">Ago 2026</span><div><h4>Summer School: Introductory Microeconomics</h4><span class="org">The London School of Economics and Political Science (LSE)</span><ul class="chips"><li>Microeconomía</li><li>Economía</li><li>Inglés</li></ul></div></li>
+    <li><span class="mono">Jun – Jul 2026</span><div><h4>Summer School: Principles of Macroeconomics</h4><span class="org">Copenhagen Business School (CBS)</span><ul class="chips"><li>Macroeconomía</li><li>Economía</li><li>Inglés</li></ul></div></li>
+    <li><span class="mono">Sep 2023 – Jun 2025</span><div><h4>Grado en Ingeniería en Organización Industrial (bilingüe)</h4><span class="org">Universidad de Oviedo</span><p>Dos primeros cursos, antes del traslado a Deusto para hacer la formación dual.</p><ul class="chips"><li>Strength of Materials</li><li>Graphic Expression</li><li>Statistics</li><li>Inglés</li></ul></div></li>
+    <li><span class="mono">Sep 2021 – Jul 2023</span><div><h4>Bachillerato Internacional y Bachillerato de Ciencias</h4><span class="org">RIES Jovellanos · Gijón</span><ul class="chips"><li>Español A: Literatura (NS)</li><li>Física (NS)</li><li>Matemáticas: Análisis (NS)</li><li>Inglés B (NM)</li><li>Filosofía (NM)</li><li>Química (NM)</li><li>Monografía</li><li>Teoría del Conocimiento</li></ul></div></li>
   </ol>
-  <h2 class="sub">Reconocimientos</h2>
+  <h2 class="sub" id="reconocimientos">Reconocimientos</h2>
   <ol class="tl">
     <li><span class="mono">Jun 2026</span><div><h4>Matrícula de honor en Optimización y Simulación</h4><span class="org">Universidad de Deusto</span></div></li>
     <li><span class="mono">Ene 2026</span><div><h4>Matrícula de honor en Ingeniería del Producto</h4><span class="org">Universidad de Deusto</span></div></li>
     <li><span class="mono">Ene 2025</span><div><h4>Matrícula de honor en Strength of Materials</h4><span class="org">Universidad de Oviedo</span></div></li>
     <li><span class="mono">May 2024</span><div><h4>Matrícula de honor en Graphic Expression</h4><span class="org">Universidad de Oviedo</span></div></li>
   </ol>
-  <h2 class="sub">Vida universitaria</h2>
+  <h2 class="sub" id="vida-universitaria">Vida universitaria</h2>
   <ol class="tl">
     <li><span class="mono">Feb 2026 – hoy</span><div><h4>Deusto Consulting Club</h4><span class="org">Junior · División Operations and Supply Chain (desde oct. 2026) · División Digital, Tech &amp; AI (desde nov. 2026)</span></div></li>
     <li><span class="mono">Oct 2025 – Jun 2026</span><div><h4>UNIC Student Ambassador</h4><span class="org">UNIC, European University of Cities in Post-Industrial Transition</span><p>Embajadora estudiantil de la alianza UNIC en Deusto. Colaboré en la UNIC Conference (Bilbao, nov. 2025) guiando a los asistentes en el registro y las salas, y en el UNIC Day (mar. 2026) dinamizando una actividad interactiva para atraer a estudiantes a la alianza. Participé en la red de Student Ambassadors de las universidades UNIC y propuse mejoras como control de asistencia, encuentros presenciales y más visibilidad de la alianza.</p></div></li>
@@ -209,7 +236,7 @@ nav .wrap .navr{display:flex;gap:10px 14px;align-items:center;flex-wrap:wrap}
   </ol>
 </section>
 </main>
-<div class="wrap"><footer><span>Candela Vázquez Fontal · 2026</span><a href="https://www.linkedin.com/in/candela-v%C3%A1zquez-fontal" target="_blank" rel="noopener">LinkedIn</a></footer></div>
+<div class="wrap"><footer><span>Candela Vázquez Fontal · 2026</span><a class="lilink" href="https://www.linkedin.com/in/candela-vazquez-fontal" target="_blank" rel="noopener"><svg class="li" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></footer></div>
 <script>
 try{document.querySelectorAll("[data-setlang]").forEach(function(a){a.addEventListener("click",function(){localStorage.setItem("lang",a.dataset.setlang)})})}catch(_){}
 </script>
