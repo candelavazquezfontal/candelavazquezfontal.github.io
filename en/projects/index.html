@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects · Candela Vázquez Fontal</title>
+<meta name="description" content="Projects by Candela Vázquez Fontal: queueing simulation for Zara mega-stores, the EcoPlay business model and the International Baccalaureate extended essay.">
+<meta name="author" content="Candela Vázquez Fontal">
+<link rel="canonical" href="https://candelavazquezfontal.github.io/en/projects/">
+<link rel="alternate" hreflang="es" href="https://candelavazquezfontal.github.io/proyectos/">
+<link rel="alternate" hreflang="en" href="https://candelavazquezfontal.github.io/en/projects/">
+<link rel="alternate" hreflang="x-default" href="https://candelavazquezfontal.github.io/proyectos/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="Candela Vázquez Fontal">
+<meta property="og:title" content="Projects · Candela Vázquez Fontal">
+<meta property="og:description" content="Projects by Candela Vázquez Fontal: queueing simulation for Zara mega-stores, the EcoPlay business model and the International Baccalaureate extended essay.">
+<meta property="og:url" content="https://candelavazquezfontal.github.io/en/projects/">
+<meta property="og:image" content="https://candelavazquezfontal.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Candela Vázquez Fontal, Industrial Organisation Engineering. Operations, logistics and data.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projects · Candela Vázquez Fontal">
+<meta name="twitter:description" content="Projects by Candela Vázquez Fontal: queueing simulation for Zara mega-stores, the EcoPlay business model and the International Baccalaureate extended essay.">
+<meta name="twitter:image" content="https://candelavazquezfontal.github.io/og-image.png">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Concepto: web como albarán de transporte. Cada sección es una hoja aparte; filas de manifiesto con fechas, códigos y separadores punteados tipo perforación. */
+:root{
+  --bg:#F5F5FB; --surface:#FFFFFF; --fg:#16183A; --muted:#5B5F85; --line:#D6D9EE;
+  --accent:#3B47C4; --accent-soft:#E0E3FF; --on-accent:#FFFFFF;
+  --ok:#1F7A4D; --ok-soft:#DDF3E7; --wip:#8A5200; --wip-soft:#FFEFD0;
+  --f-display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
+  --f-body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1024; --surface:#161939; --fg:#E9EAF8; --muted:#9A9EC6; --line:#2B2F5E;
+  --accent:#A3ADFF; --accent-soft:#252A66; --on-accent:#0E1024;
+  --ok:#7ADCA6; --ok-soft:#173D2C; --wip:#FFC76B; --wip-soft:#46310E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1024; --surface:#161939; --fg:#E9EAF8; --muted:#9A9EC6; --line:#2B2F5E;
+  --accent:#A3ADFF; --accent-soft:#252A66; --on-accent:#0E1024;
+  --ok:#7ADCA6; --ok-soft:#173D2C; --wip:#FFC76B; --wip-soft:#46310E; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--f-body);padding-inline:20px}
+.wrap{max-width:980px;margin-inline:auto}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+
+/* Navegación por secciones */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px dashed var(--line);margin-inline:-20px;padding:10px 20px}
+nav .wrap{display:flex;gap:8px 18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+nav b{font-family:var(--f-display);font-size:17px}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;color:var(--fg);text-decoration:none;font-size:14px;padding:5px 11px;border-radius:999px;border:1px solid transparent}
+nav a:hover{border-color:var(--line)}
+nav a[aria-current="page"]{background:var(--accent);color:var(--on-accent)}
+
+.view{padding-block:40px 56px}
+.view-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.view-head h2{font-size:clamp(32px,6vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1}
+.view h3.sub{font-size:22px;font-weight:700;margin:36px 0 12px}
+.view h3.sub:first-of-type{margin-top:0}
+
+/* Inicio */
+.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:start;padding-block:16px 40px}
+.hero h1{font-size:clamp(40px,7vw,76px);line-height:.98;font-weight:800;letter-spacing:-.02em}
+.hero h1 span{color:var(--accent)}
+.hero p.lead{font-size:18px;max-width:52ch;color:var(--muted);margin:20px 0 0}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{font:500 14px var(--f-body);padding:10px 16px;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.label{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:18px;min-width:0}
+.label dl{margin:12px 0 0;display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:14px}
+.label dt{font-family:var(--f-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:2px}
+.label dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;padding-block:36px;border-top:1px dashed var(--line)}
+.about p{margin:0 0 12px;max-width:60ch}
+.about .side{display:grid;gap:18px;align-content:start;min-width:0}
+.about .side p{margin:0 0 8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0;list-style:none}
+.chips li,.chip{font:500 13px var(--f-body);padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg)}
+button.chip{cursor:pointer}
+button.chip span{color:var(--muted);font-family:var(--f-mono);font-size:11px;margin-left:5px}
+button.chip[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+button.chip[aria-pressed="true"] span{color:var(--on-accent)}
+.seek{padding-block:32px;border-top:1px dashed var(--line)}
+.seek p:not(.mono){margin:6px 0 14px;max-width:62ch;font-size:17px}
+.doors{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--fg)}
+.doors a{display:block;padding:18px 18px 18px 0;text-decoration:none;color:var(--fg);border-bottom:1px dashed var(--line)}
+.doors a+a{padding-left:18px;border-left:1px dashed var(--line)}
+.doors b{display:block;font:700 22px var(--f-display);margin-top:6px}
+.doors span.go{color:var(--accent);font-size:14px}
+.doors a:hover b{color:var(--accent)}
+
+/* Listas tipo manifiesto */
+.tl{list-style:none;margin:0;padding:0;border-top:1px solid var(--fg)}
+.tl>li{display:grid;grid-template-columns:170px 1fr;gap:6px 24px;padding-block:16px;border-bottom:1px dashed var(--line)}
+.tl h4{font:700 19px var(--f-display);margin:0}
+.tl .org{color:var(--muted);font-size:14px}
+.tl p{margin:6px 0 0;font-size:15px;max-width:64ch}
+.tl ul.pts{margin:6px 0 0;padding-left:18px;font-size:15px;max-width:64ch}
+.tl .chips{margin-top:10px}
+.tl .chips li{font-size:12px;padding:3px 9px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.tools .lab{flex:0 0 auto;margin-right:4px}
+.field{font:400 14px var(--f-body);padding:7px 11px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--fg);min-width:0;max-width:100%}
+input.field{flex:1 1 200px;max-width:320px}
+.count{display:block;margin:0 0 8px}
+.rows{border-top:1px solid var(--fg)}
+.row{display:grid;grid-template-columns:120px 1fr auto;gap:6px 20px;padding:13px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.row h3{font-size:17px;font-weight:700}
+.row .meta{color:var(--muted);font-size:14px;margin-top:2px}
+.row .go{font-size:13px;white-space:nowrap}
+.row .go .id{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.empty{color:var(--muted);padding:16px 0;margin:0}
+#proj-list{border-top:1px solid var(--fg)}
+details.proj{border-bottom:1px dashed var(--line)}
+details.proj summary{display:grid;grid-template-columns:120px 1fr auto;gap:6px 20px;padding:16px 0;cursor:pointer;list-style:none;align-items:baseline}
+details.proj summary::-webkit-details-marker{display:none}
+details.proj summary h3{font-size:20px;font-weight:700}
+details.proj summary .meta{color:var(--muted);font-size:14px}
+details.proj summary .plus{font-family:var(--f-mono);color:var(--accent);font-size:20px;line-height:1;display:inline-block}
+details.proj[open] .plus{transform:rotate(45deg)}
+.proj-body{display:grid;grid-template-columns:120px 1fr;gap:0 20px;padding:0 0 22px}
+.proj-body .in{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;min-width:0}
+.proj-body h4{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.proj-body p{margin:0;font-size:15px;max-width:66ch}
+.proj-body ul{margin:0;padding-left:18px;font-size:15px}
+.proj-body .wide{grid-column:1/-1}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{font-size:12px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.honor{display:inline-block;font:500 11px var(--f-mono);letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--ok-soft);color:var(--ok)}
+.draft{background:var(--wip-soft);color:var(--fg);border-left:3px solid var(--wip);padding:10px 12px;font-size:14px}
+.draft b{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--wip);display:block;margin-bottom:2px}
+p.draft{margin:18px 0 0}
+body.clean .draft{display:none}
+footer{padding-block:28px 48px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+footer button{font:500 13px var(--f-body);padding:6px 12px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+@media (max-width:760px){
+  .hero,.about{grid-template-columns:1fr}
+  .hero{gap:28px;padding-block:8px 32px}
+  .doors{grid-template-columns:1fr}
+  .doors a+a{padding-left:0;border-left:0}
+  .tl>li{grid-template-columns:1fr}
+  .row,details.proj summary{grid-template-columns:1fr auto}
+  .row>:first-child,details.proj summary>:first-child{grid-column:1/-1}
+  .row>div{grid-column:1/-1}
+  .row .go{grid-column:1/-1;white-space:normal}
+  .proj-body{grid-template-columns:1fr}
+  .proj-body .in{grid-column:1;grid-template-columns:1fr}
+}
+.langsw{display:flex;gap:2px;align-items:center;font:500 13px var(--f-mono);letter-spacing:.04em}
+.langsw a,.langsw span{padding:4px 9px;border-radius:999px;border:1px solid transparent;text-decoration:none;color:var(--muted)}
+.langsw a:hover{border-color:var(--line);color:var(--fg)}
+.langsw span[aria-current="true"]{background:var(--accent);color:var(--on-accent)}
+nav .wrap .navr{display:flex;gap:10px 14px;align-items:center;flex-wrap:wrap}
+.note-sm{color:var(--muted);font-size:14px;max-width:62ch}
+@media (max-width:760px){
+  nav .wrap .navr{display:contents}
+  nav .wrap>a{order:1}
+  nav .wrap .langsw{order:2;margin-left:auto}
+  nav .wrap .navr ul{order:3;flex-basis:100%}
+}
+
+</style>
+</head>
+<body>
+<nav aria-label="Sections"><div class="wrap"><a href="/en/" style="text-decoration:none;color:inherit"><b>C. Vázquez Fontal</b></a><div class="navr"><ul><li><a href="/en/">Home</a></li><li><a href="/en/experience/">Experience</a></li><li><a href="/en/projects/" aria-current="page">Projects</a></li><li><a href="/en/certifications/">Certifications</a></li><li><a href="/en/contact/">Contact</a></li></ul><div class="langsw" role="group" aria-label="Language"><a href="/proyectos/" hreflang="es" lang="es" data-setlang="es">ES</a><span aria-current="true" lang="en">EN</span></div></div></div></nav>
+<main class="wrap">
+<section class="view" id="v-proyectos">
+  <div class="view-head"><h1 style="font-size:clamp(32px,6vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1">Projects</h1><span class="mono">Open each one to expand</span></div>
+  <div class="tools" id="proj-area" role="group" aria-label="Project area"><span class="mono lab">Area</span><button type="button" class="chip" data-f="all" aria-pressed="true">All<span>3</span></button><button type="button" class="chip" data-f="opt" aria-pressed="false">Optimisation<span>1</span></button><button type="button" class="chip" data-f="log" aria-pressed="false">Logistics<span>1</span></button><button type="button" class="chip" data-f="data" aria-pressed="false">Data<span>1</span></button><button type="button" class="chip" data-f="cost" aria-pressed="false">Costs<span>1</span></button><button type="button" class="chip" data-f="biz" aria-pressed="false">Business<span>1</span></button></div>
+  <span class="mono count" id="proj-count" aria-live="polite"></span>
+  <div id="proj-list">
+<details class="proj" id="prj-001" data-areas="opt log data"><summary><span class="mono">PRJ-001</span><div><h2 style="font-size:20px;font-weight:700">Queueing and Simulation: Zara mega-stores</h2><div class="meta">Optimization and Simulation · Deusto · Feb – May 2026 · group project (3 people)</div></div><span class="plus" aria-hidden="true">+</span></summary><div class="proj-body"><span></span><div class="in"><div class="wide"><span class="honor">Course with Matrícula de Honor</span></div><div class="wide"><h4>Problem</h4><p>Course project on the online-order pickup and packing process of Zara mega-stores.</p></div><div class="wide"><h4>What was done</h4><p>Modelled the process as a multi-server queue, comparing a single mega-store with five distributed stores, and simulated a full year of operation (777,780 orders).</p></div><div class="wide"><h4>My part</h4><p>Group project, 3 people.</p></div><div class="wide"><h4>Results</h4><ul><li>System saturated in the 16:00–21:00 slot in both scenarios and unable to recover its backlog (−795 and −390 orders/day).</li><li>One-year simulation: 62.58% of orders served and 290,030 lost sales, all in the overnight slot.</li><li>Proposal: notify customers of delays, cap the online order queue and add afternoon and night capacity.</li></ul></div><div><h4>Tools and methods</h4><div class="tags"><span>Queueing theory</span><span>Simulation</span></div></div><div><h4>Areas</h4><div class="tags"><span>Optimisation</span><span>Logistics</span><span>Data</span></div></div></div></div></details>
+<details class="proj" id="prj-002" data-areas="cost biz"><summary><span class="mono">PRJ-002</span><div><h2 style="font-size:20px;font-weight:700">EcoPlay: circular toy subscription</h2><div class="meta">Product Engineering · Deusto · Sep 2025 – Jan 2026 · group project (3 people)</div></div><span class="plus" aria-hidden="true">+</span></summary><div class="proj-body"><span></span><div class="in"><div class="wide"><span class="honor">Course with Matrícula de Honor</span></div><div class="wide"><h4>Problem</h4><p>Business model for a subscription service of refurbished toys.</p></div><div class="wide"><h4>What was done</h4><p>Business Model Canvas and Value Proposition Canvas, economic model, and a validation test with 7 critical hypotheses and 4 customer interviews.</p></div><div class="wide"><h4>My part</h4><p>Group project, 3 people.</p></div><div class="wide"><h4>Results</h4><ul><li>Break-even at 411 active monthly subscribers and a €25,000 net profit target in year 3.</li><li>€13 variable cost per customer and plans at €19.90, €25.90 and €34.90 a month.</li><li>Validation: 80% understood the concept and asked about delivery times, with no reason found to pivot.</li></ul></div><div><h4>Tools and methods</h4><div class="tags"><span>Business Model Canvas</span><span>Value Proposition Canvas</span><span>Cost analysis</span><span>Interviews</span></div></div><div><h4>Areas</h4><div class="tags"><span>Costs</span><span>Business</span></div></div></div></div></details>
+<details class="proj" id="prj-003" data-areas=""><summary><span class="mono">PRJ-003</span><div><h2 style="font-size:20px;font-weight:700">International Baccalaureate Extended Essay</h2><div class="meta">Spanish literature · Jan 2022 – Mar 2023</div></div><span class="plus" aria-hidden="true">+</span></summary><div class="proj-body"><span></span><div class="in"><div class="wide"><h4>Problem</h4><p>The extended essay is the capstone of the IB Diploma: independent research on a topic chosen by the student.</p></div><div class="wide"><h4>What was done</h4><p>Guided research and academic writing on Spanish-language literature, chosen out of my interest in reading.</p></div><div class="wide"><h4>My part</h4><p>Individual work.</p></div><div class="wide"><h4>Results</h4><ul><li>Extended essay submitted and assessed.</li></ul></div><div><h4>Tools and methods</h4><div class="tags"><span>Research</span><span>Project planning</span><span>Academic writing</span></div></div></div></div></details>
+  </div>
+</section>
+</main>
+<div class="wrap"><footer><span>Candela Vázquez Fontal · 2026</span><a href="https://www.linkedin.com/in/candela-v%C3%A1zquez-fontal" target="_blank" rel="noopener">LinkedIn</a></footer></div>
+<script>
+try{document.querySelectorAll("[data-setlang]").forEach(function(a){a.addEventListener("click",function(){localStorage.setItem("lang",a.dataset.setlang)})})}catch(_){}
+(function(){
+  var T="{a} of {b} projects",N=3;
+  var chips=document.querySelectorAll("#proj-area .chip"),items=document.querySelectorAll("details.proj"),cnt=document.getElementById("proj-count");
+  function apply(f){var n=0;items.forEach(function(d){var ok=f==="all"||(d.dataset.areas||"").split(" ").indexOf(f)>-1;d.hidden=!ok;if(ok)n++});
+    chips.forEach(function(c){c.setAttribute("aria-pressed",c.dataset.f===f)});cnt.textContent=T.replace("{a}",n).replace("{b}",N)}
+  chips.forEach(function(c){c.onclick=function(){apply(c.dataset.f)}});apply("all");
+  if(location.hash){var t=document.querySelector(location.hash);if(t&&t.tagName==="DETAILS")t.open=true}
+})();
+</script>
+</body>
+</html>

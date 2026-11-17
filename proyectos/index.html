@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proyectos · Candela Vázquez Fontal</title>
+<meta name="description" content="Proyectos de Candela Vázquez Fontal: simulación de colas en macro-tiendas de Zara, modelo de negocio de EcoPlay y monografía del Bachillerato Internacional.">
+<meta name="author" content="Candela Vázquez Fontal">
+<link rel="canonical" href="https://candelavazquezfontal.github.io/proyectos/">
+<link rel="alternate" hreflang="es" href="https://candelavazquezfontal.github.io/proyectos/">
+<link rel="alternate" hreflang="en" href="https://candelavazquezfontal.github.io/en/projects/">
+<link rel="alternate" hreflang="x-default" href="https://candelavazquezfontal.github.io/proyectos/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:site_name" content="Candela Vázquez Fontal">
+<meta property="og:title" content="Proyectos · Candela Vázquez Fontal">
+<meta property="og:description" content="Proyectos de Candela Vázquez Fontal: simulación de colas en macro-tiendas de Zara, modelo de negocio de EcoPlay y monografía del Bachillerato Internacional.">
+<meta property="og:url" content="https://candelavazquezfontal.github.io/proyectos/">
+<meta property="og:image" content="https://candelavazquezfontal.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Candela Vázquez Fontal, Ingeniería en Organización Industrial. Operaciones, logística y datos.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proyectos · Candela Vázquez Fontal">
+<meta name="twitter:description" content="Proyectos de Candela Vázquez Fontal: simulación de colas en macro-tiendas de Zara, modelo de negocio de EcoPlay y monografía del Bachillerato Internacional.">
+<meta name="twitter:image" content="https://candelavazquezfontal.github.io/og-image.png">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Concepto: web como albarán de transporte. Cada sección es una hoja aparte; filas de manifiesto con fechas, códigos y separadores punteados tipo perforación. */
+:root{
+  --bg:#F5F5FB; --surface:#FFFFFF; --fg:#16183A; --muted:#5B5F85; --line:#D6D9EE;
+  --accent:#3B47C4; --accent-soft:#E0E3FF; --on-accent:#FFFFFF;
+  --ok:#1F7A4D; --ok-soft:#DDF3E7; --wip:#8A5200; --wip-soft:#FFEFD0;
+  --f-display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
+  --f-body:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1024; --surface:#161939; --fg:#E9EAF8; --muted:#9A9EC6; --line:#2B2F5E;
+  --accent:#A3ADFF; --accent-soft:#252A66; --on-accent:#0E1024;
+  --ok:#7ADCA6; --ok-soft:#173D2C; --wip:#FFC76B; --wip-soft:#46310E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1024; --surface:#161939; --fg:#E9EAF8; --muted:#9A9EC6; --line:#2B2F5E;
+  --accent:#A3ADFF; --accent-soft:#252A66; --on-accent:#0E1024;
+  --ok:#7ADCA6; --ok-soft:#173D2C; --wip:#FFC76B; --wip-soft:#46310E; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--f-body);padding-inline:20px}
+.wrap{max-width:980px;margin-inline:auto}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+
+/* Navegación por secciones */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px dashed var(--line);margin-inline:-20px;padding:10px 20px}
+nav .wrap{display:flex;gap:8px 18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+nav b{font-family:var(--f-display);font-size:17px}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;color:var(--fg);text-decoration:none;font-size:14px;padding:5px 11px;border-radius:999px;border:1px solid transparent}
+nav a:hover{border-color:var(--line)}
+nav a[aria-current="page"]{background:var(--accent);color:var(--on-accent)}
+
+.view{padding-block:40px 56px}
+.view-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.view-head h2{font-size:clamp(32px,6vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1}
+.view h3.sub{font-size:22px;font-weight:700;margin:36px 0 12px}
+.view h3.sub:first-of-type{margin-top:0}
+
+/* Inicio */
+.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:start;padding-block:16px 40px}
+.hero h1{font-size:clamp(40px,7vw,76px);line-height:.98;font-weight:800;letter-spacing:-.02em}
+.hero h1 span{color:var(--accent)}
+.hero p.lead{font-size:18px;max-width:52ch;color:var(--muted);margin:20px 0 0}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{font:500 14px var(--f-body);padding:10px 16px;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.label{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:18px;min-width:0}
+.label dl{margin:12px 0 0;display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:14px}
+.label dt{font-family:var(--f-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:2px}
+.label dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;padding-block:36px;border-top:1px dashed var(--line)}
+.about p{margin:0 0 12px;max-width:60ch}
+.about .side{display:grid;gap:18px;align-content:start;min-width:0}
+.about .side p{margin:0 0 8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:0;padding:0;list-style:none}
+.chips li,.chip{font:500 13px var(--f-body);padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg)}
+button.chip{cursor:pointer}
+button.chip span{color:var(--muted);font-family:var(--f-mono);font-size:11px;margin-left:5px}
+button.chip[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+button.chip[aria-pressed="true"] span{color:var(--on-accent)}
+.seek{padding-block:32px;border-top:1px dashed var(--line)}
+.seek p:not(.mono){margin:6px 0 14px;max-width:62ch;font-size:17px}
+.doors{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--fg)}
+.doors a{display:block;padding:18px 18px 18px 0;text-decoration:none;color:var(--fg);border-bottom:1px dashed var(--line)}
+.doors a+a{padding-left:18px;border-left:1px dashed var(--line)}
+.doors b{display:block;font:700 22px var(--f-display);margin-top:6px}
+.doors span.go{color:var(--accent);font-size:14px}
+.doors a:hover b{color:var(--accent)}
+
+/* Listas tipo manifiesto */
+.tl{list-style:none;margin:0;padding:0;border-top:1px solid var(--fg)}
+.tl>li{display:grid;grid-template-columns:170px 1fr;gap:6px 24px;padding-block:16px;border-bottom:1px dashed var(--line)}
+.tl h4{font:700 19px var(--f-display);margin:0}
+.tl .org{color:var(--muted);font-size:14px}
+.tl p{margin:6px 0 0;font-size:15px;max-width:64ch}
+.tl ul.pts{margin:6px 0 0;padding-left:18px;font-size:15px;max-width:64ch}
+.tl .chips{margin-top:10px}
+.tl .chips li{font-size:12px;padding:3px 9px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.tools .lab{flex:0 0 auto;margin-right:4px}
+.field{font:400 14px var(--f-body);padding:7px 11px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--fg);min-width:0;max-width:100%}
+input.field{flex:1 1 200px;max-width:320px}
+.count{display:block;margin:0 0 8px}
+.rows{border-top:1px solid var(--fg)}
+.row{display:grid;grid-template-columns:120px 1fr auto;gap:6px 20px;padding:13px 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.row h3{font-size:17px;font-weight:700}
+.row .meta{color:var(--muted);font-size:14px;margin-top:2px}
+.row .go{font-size:13px;white-space:nowrap}
+.row .go .id{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.empty{color:var(--muted);padding:16px 0;margin:0}
+#proj-list{border-top:1px solid var(--fg)}
+details.proj{border-bottom:1px dashed var(--line)}
+details.proj summary{display:grid;grid-template-columns:120px 1fr auto;gap:6px 20px;padding:16px 0;cursor:pointer;list-style:none;align-items:baseline}
+details.proj summary::-webkit-details-marker{display:none}
+details.proj summary h3{font-size:20px;font-weight:700}
+details.proj summary .meta{color:var(--muted);font-size:14px}
+details.proj summary .plus{font-family:var(--f-mono);color:var(--accent);font-size:20px;line-height:1;display:inline-block}
+details.proj[open] .plus{transform:rotate(45deg)}
+.proj-body{display:grid;grid-template-columns:120px 1fr;gap:0 20px;padding:0 0 22px}
+.proj-body .in{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;min-width:0}
+.proj-body h4{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.proj-body p{margin:0;font-size:15px;max-width:66ch}
+.proj-body ul{margin:0;padding-left:18px;font-size:15px}
+.proj-body .wide{grid-column:1/-1}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{font-size:12px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.honor{display:inline-block;font:500 11px var(--f-mono);letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:var(--ok-soft);color:var(--ok)}
+.draft{background:var(--wip-soft);color:var(--fg);border-left:3px solid var(--wip);padding:10px 12px;font-size:14px}
+.draft b{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--wip);display:block;margin-bottom:2px}
+p.draft{margin:18px 0 0}
+body.clean .draft{display:none}
+footer{padding-block:28px 48px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+footer button{font:500 13px var(--f-body);padding:6px 12px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+@media (max-width:760px){
+  .hero,.about{grid-template-columns:1fr}
+  .hero{gap:28px;padding-block:8px 32px}
+  .doors{grid-template-columns:1fr}
+  .doors a+a{padding-left:0;border-left:0}
+  .tl>li{grid-template-columns:1fr}
+  .row,details.proj summary{grid-template-columns:1fr auto}
+  .row>:first-child,details.proj summary>:first-child{grid-column:1/-1}
+  .row>div{grid-column:1/-1}
+  .row .go{grid-column:1/-1;white-space:normal}
+  .proj-body{grid-template-columns:1fr}
+  .proj-body .in{grid-column:1;grid-template-columns:1fr}
+}
+.langsw{display:flex;gap:2px;align-items:center;font:500 13px var(--f-mono);letter-spacing:.04em}
+.langsw a,.langsw span{padding:4px 9px;border-radius:999px;border:1px solid transparent;text-decoration:none;color:var(--muted)}
+.langsw a:hover{border-color:var(--line);color:var(--fg)}
+.langsw span[aria-current="true"]{background:var(--accent);color:var(--on-accent)}
+nav .wrap .navr{display:flex;gap:10px 14px;align-items:center;flex-wrap:wrap}
+.note-sm{color:var(--muted);font-size:14px;max-width:62ch}
+@media (max-width:760px){
+  nav .wrap .navr{display:contents}
+  nav .wrap>a{order:1}
+  nav .wrap .langsw{order:2;margin-left:auto}
+  nav .wrap .navr ul{order:3;flex-basis:100%}
+}
+
+</style>
+</head>
+<body>
+<nav aria-label="Secciones"><div class="wrap"><a href="/" style="text-decoration:none;color:inherit"><b>C. Vázquez Fontal</b></a><div class="navr"><ul><li><a href="/">Inicio</a></li><li><a href="/trayectoria/">Trayectoria</a></li><li><a href="/proyectos/" aria-current="page">Proyectos</a></li><li><a href="/certificaciones/">Certificaciones</a></li><li><a href="/contacto/">Contacto</a></li></ul><div class="langsw" role="group" aria-label="Idioma"><span aria-current="true" lang="es">ES</span><a href="/en/projects/" hreflang="en" lang="en" data-setlang="en">EN</a></div></div></div></nav>
+<main class="wrap">
+<section class="view" id="v-proyectos">
+  <div class="view-head"><h1 style="font-size:clamp(32px,6vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1">Proyectos</h1><span class="mono">Abre cada uno para ampliar</span></div>
+  <div class="tools" id="proj-area" role="group" aria-label="Área del proyecto"><span class="mono lab">Área</span><button type="button" class="chip" data-f="all" aria-pressed="true">Todas<span>3</span></button><button type="button" class="chip" data-f="opt" aria-pressed="false">Optimización<span>1</span></button><button type="button" class="chip" data-f="log" aria-pressed="false">Logística<span>1</span></button><button type="button" class="chip" data-f="data" aria-pressed="false">Datos<span>1</span></button><button type="button" class="chip" data-f="cost" aria-pressed="false">Costes<span>1</span></button><button type="button" class="chip" data-f="biz" aria-pressed="false">Negocio<span>1</span></button></div>
+  <span class="mono count" id="proj-count" aria-live="polite"></span>
+  <div id="proj-list">
+<details class="proj" id="prj-001" data-areas="opt log data"><summary><span class="mono">PRJ-001</span><div><h2 style="font-size:20px;font-weight:700">Colas y simulación: macro-tiendas de Zara</h2><div class="meta">Optimización y Simulación · Deusto · feb. – may. 2026 · proyecto en grupo (3 personas)</div></div><span class="plus" aria-hidden="true">+</span></summary><div class="proj-body"><span></span><div class="in"><div class="wide"><span class="honor">Asignatura con matrícula de honor</span></div><div class="wide"><h4>Problema</h4><p>Trabajo de la asignatura sobre el proceso de recogida y preparación de pedidos online de las macro-tiendas de Zara.</p></div><div class="wide"><h4>Qué se hizo</h4><p>Modelo del proceso como una cola de varios servidores, comparando una única macro-tienda con cinco tiendas distribuidas, y simulación de un año de operación (777.780 pedidos).</p></div><div class="wide"><h4>Mi parte</h4><p>Proyecto en grupo de 3 personas.</p></div><div class="wide"><h4>Resultados</h4><ul><li>Sistema saturado en la franja de 16:00 a 21:00 en ambos escenarios y sin capacidad para recuperar la cola (−795 y −390 pedidos al día).</li><li>Simulación de un año: 62,58 % de pedidos servidos y 290.030 ventas perdidas, todas en la franja nocturna.</li><li>Propuesta: avisar a los clientes de los retrasos, limitar la cola de pedidos online y añadir capacidad por la tarde y por la noche.</li></ul></div><div><h4>Herramientas y métodos</h4><div class="tags"><span>Teoría de colas</span><span>Simulación</span></div></div><div><h4>Áreas</h4><div class="tags"><span>Optimización</span><span>Logística</span><span>Datos</span></div></div></div></div></details>
+<details class="proj" id="prj-002" data-areas="cost biz"><summary><span class="mono">PRJ-002</span><div><h2 style="font-size:20px;font-weight:700">EcoPlay: suscripción circular de juguetes</h2><div class="meta">Ingeniería del Producto · Deusto · sept. 2025 – ene. 2026 · proyecto en grupo (3 personas)</div></div><span class="plus" aria-hidden="true">+</span></summary><div class="proj-body"><span></span><div class="in"><div class="wide"><span class="honor">Asignatura con matrícula de honor</span></div><div class="wide"><h4>Problema</h4><p>Modelo de negocio de un servicio de suscripción de juguetes reacondicionados.</p></div><div class="wide"><h4>Qué se hizo</h4><p>Business Model Canvas y Value Proposition Canvas, modelo económico y diseño de una validación con 7 hipótesis críticas y 4 entrevistas a clientes.</p></div><div class="wide"><h4>Mi parte</h4><p>Proyecto en grupo de 3 personas.</p></div><div class="wide"><h4>Resultados</h4><ul><li>Punto de equilibrio en 411 suscriptores mensuales activos y beneficio neto objetivo de 25.000 € en el tercer año.</li><li>Coste variable de 13 € por cliente y planes de 19,90 €, 25,90 € y 34,90 € al mes.</li><li>Validación: el 80 % entendió el concepto y preguntó por los plazos de entrega, sin motivo para cambiar de rumbo.</li></ul></div><div><h4>Herramientas y métodos</h4><div class="tags"><span>Business Model Canvas</span><span>Value Proposition Canvas</span><span>Análisis de costes</span><span>Entrevistas</span></div></div><div><h4>Áreas</h4><div class="tags"><span>Costes</span><span>Negocio</span></div></div></div></div></details>
+<details class="proj" id="prj-003" data-areas=""><summary><span class="mono">PRJ-003</span><div><h2 style="font-size:20px;font-weight:700">Monografía del Bachillerato Internacional</h2><div class="meta">Literatura castellana · ene. 2022 – mar. 2023</div></div><span class="plus" aria-hidden="true">+</span></summary><div class="proj-body"><span></span><div class="in"><div class="wide"><h4>Problema</h4><p>La monografía es el trabajo de fin del Bachillerato Internacional: una investigación propia sobre un tema elegido por el alumno.</p></div><div class="wide"><h4>Qué se hizo</h4><p>Investigación guiada y redacción académica sobre literatura castellana, elegida por mi interés en la lectura.</p></div><div class="wide"><h4>Mi parte</h4><p>Trabajo individual.</p></div><div class="wide"><h4>Resultados</h4><ul><li>Monografía entregada y evaluada.</li></ul></div><div><h4>Herramientas y métodos</h4><div class="tags"><span>Investigación</span><span>Planificación de proyectos</span><span>Redacción académica</span></div></div></div></div></details>
+  </div>
+</section>
+</main>
+<div class="wrap"><footer><span>Candela Vázquez Fontal · 2026</span><a href="https://www.linkedin.com/in/candela-v%C3%A1zquez-fontal" target="_blank" rel="noopener">LinkedIn</a></footer></div>
+<script>
+try{document.querySelectorAll("[data-setlang]").forEach(function(a){a.addEventListener("click",function(){localStorage.setItem("lang",a.dataset.setlang)})})}catch(_){}
+(function(){
+  var T="{a} de {b} proyectos",N=3;
+  var chips=document.querySelectorAll("#proj-area .chip"),items=document.querySelectorAll("details.proj"),cnt=document.getElementById("proj-count");
+  function apply(f){var n=0;items.forEach(function(d){var ok=f==="all"||(d.dataset.areas||"").split(" ").indexOf(f)>-1;d.hidden=!ok;if(ok)n++});
+    chips.forEach(function(c){c.setAttribute("aria-pressed",c.dataset.f===f)});cnt.textContent=T.replace("{a}",n).replace("{b}",N)}
+  chips.forEach(function(c){c.onclick=function(){apply(c.dataset.f)}});apply("all");
+  if(location.hash){var t=document.querySelector(location.hash);if(t&&t.tagName==="DETAILS")t.open=true}
+})();
+</script>
+</body>
+</html>
