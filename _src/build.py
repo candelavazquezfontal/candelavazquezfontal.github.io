@@ -258,6 +258,26 @@ PATH = {
 
 # ---------------------------------------------------------------- proyectos
 PROJECTS = [
+ {"id": "PRJ-004", "short": {"es": "reZZ", "en": "reZZ"}, "honor": False, "areas": ["digital", "pm"],
+  "link": "https://rezz-app.pages.dev",
+  "es": {"t": "reZZ: app de recetas para iPhone y Mac",
+         "meta": "Proyecto personal · oct. – nov. 2026 · en marcha",
+         "ctx": "Quería guardar mis recetas en un solo sitio, adaptarlas a lo que tengo en la despensa y guardar recetas de Instagram sin copiarlas a mano.",
+         "how": "Diseñé y puse en marcha una app web instalable (PWA) que funciona sin conexión y se sincroniza entre el iPhone y el Mac.",
+         "res": ["App publicada y en uso diario, sin coste: alojamiento en Cloudflare Pages y datos en Supabase.",
+                 "Cada receta original se conserva intacta y las variantes quedan encima, con su historial.",
+                 "Despensa y lista de la compra conectadas con las recetas; un Atajo de iPhone guarda reels de Instagram como receta."],
+         "tools": ["Diseño de producto", "PWA", "Supabase", "Cloudflare Pages"], "role": "Proyecto individual: idea, diseño y pruebas.",
+         "link": "Abrir la app"},
+  "en": {"t": "reZZ: a recipe app for iPhone and Mac",
+         "meta": "Personal project · Oct – Nov 2026 · ongoing",
+         "ctx": "I wanted my recipes in one place, adapted to what I have in the pantry, and to save Instagram recipes without copying them by hand.",
+         "how": "Designed and launched an installable web app (PWA) that works offline and syncs between iPhone and Mac.",
+         "res": ["App live and in daily use at no cost: hosted on Cloudflare Pages with data in Supabase.",
+                 "Each original recipe is kept intact, with variants layered on top and their history.",
+                 "Pantry and shopping list linked to recipes; an iPhone Shortcut saves Instagram reels as recipes."],
+         "tools": ["Product design", "PWA", "Supabase", "Cloudflare Pages"], "role": "Individual project: idea, design and testing.",
+         "link": "Open the app"}},
  {"id": "PRJ-001", "short": {"es": "Zara", "en": "Zara"}, "honor": True, "areas": ["opt", "log", "data"],
   "es": {"t": "Colas y simulación: macro-tiendas de Zara",
          "meta": "Optimización y Simulación · Deusto · feb. – may. 2026 · proyecto en grupo (3 personas)",
@@ -306,7 +326,8 @@ PROJECTS = [
          "res": ["Extended essay submitted and assessed."],
          "tools": ["Research", "Project planning", "Academic writing"], "role": "Individual work."}},
 ]
-AREAS = [("opt", {"es": "Optimización", "en": "Optimisation"}),
+AREAS = [("digital", {"es": "Producto digital", "en": "Digital product"}),
+         ("opt", {"es": "Optimización", "en": "Optimisation"}),
          ("log", {"es": "Logística", "en": "Logistics"}),
          ("data", {"es": "Datos", "en": "Data"}),
          ("cost", {"es": "Costes", "en": "Costs"}),
@@ -676,6 +697,8 @@ def body_proj(lang):
         blk += f'<div class="wide"><h4>{e(ui["role"])}</h4><p>{e(c["role"])}</p></div>'
         blk += f'<div class="wide"><h4>{e(ui["res"])}</h4><ul>' + "".join(f"<li>{e(x)}</li>" for x in c["res"]) + "</ul></div>"
         blk += f'<div><h4>{e(ui["tools"])}</h4><div class="tags">' + "".join(f"<span>{e(x)}</span>" for x in c["tools"]) + "</div></div>"
+        if p.get("link"):
+            blk += f'<div class="wide"><p><a href="{e(p["link"])}" target="_blank" rel="noopener">{e(c["link"])} ↗</a></p></div>'
         if p["areas"]:
             blk += f'<div><h4>{e(ui["areas"])}</h4><div class="tags">' + "".join(f"<span>{e(area_name[a])}</span>" for a in p["areas"]) + "</div></div>"
         items += (f'<details class="proj" id="{p["id"].lower()}" data-areas="{" ".join(p["areas"])}"><summary>'
