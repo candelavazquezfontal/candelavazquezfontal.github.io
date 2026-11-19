@@ -554,6 +554,7 @@ def head(lang, key):
         '<meta name="viewport" content="width=device-width,initial-scale=1">',
         f"<title>{e(t)}</title>",
         f'<meta name="description" content="{e(d)}">',
+        *([] if key == "home" else ['<meta name="robots" content="noindex,follow">']),
         '<meta name="author" content="Candela Vázquez Fontal">',
         f'<link rel="canonical" href="{url(key, lang)}">',
         f'<link rel="alternate" hreflang="es" href="{url(key, "es")}">',
@@ -869,6 +870,7 @@ def build():
             write(rel, page(lang, key, body, script))
     urls = []
     for key in ORDER:
+        if key != "home": continue   # solo la portada se indexa; las secciones llevan noindex
         for lang in ("es", "en"):
             alts = "".join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{url(key, l)}"/>' for l in ("es", "en"))
             alts += f'<xhtml:link rel="alternate" hreflang="x-default" href="{url(key, "es")}"/>'
