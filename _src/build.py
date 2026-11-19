@@ -554,12 +554,9 @@ def head(lang, key):
         '<meta name="viewport" content="width=device-width,initial-scale=1">',
         f"<title>{e(t)}</title>",
         f'<meta name="description" content="{e(d)}">',
-        *([] if key == "home" else ['<meta name="robots" content="noindex,follow">']),
+        *([] if (key == "home" and lang == "es") else ['<meta name="robots" content="noindex,follow">']),
         '<meta name="author" content="Candela Vázquez Fontal">',
         f'<link rel="canonical" href="{url(key, lang)}">',
-        f'<link rel="alternate" hreflang="es" href="{url(key, "es")}">',
-        f'<link rel="alternate" hreflang="en" href="{url(key, "en")}">',
-        f'<link rel="alternate" hreflang="x-default" href="{url(key, "es")}">',
         f'<meta property="og:type" content="{"profile" if key == "home" else "website"}">',
         f'<meta property="og:locale" content="{u["locale"]}">',
         f'<meta property="og:locale:alternate" content="{u["other_locale"]}">',
@@ -870,10 +867,9 @@ def build():
             write(rel, page(lang, key, body, script))
     urls = []
     for key in ORDER:
-        if key != "home": continue   # solo la portada se indexa; las secciones llevan noindex
-        for lang in ("es", "en"):
-            alts = "".join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{url(key, l)}"/>' for l in ("es", "en"))
-            alts += f'<xhtml:link rel="alternate" hreflang="x-default" href="{url(key, "es")}"/>'
+        if key != "home": continue   # solo la portada en español se indexa; el resto lleva noindex
+        for lang in ("es",):
+            alts = ""
             pr = "1.0" if key == "home" else "0.8"
             urls.append(f"  <url><loc>{url(key, lang)}</loc><lastmod>{LASTMOD}</lastmod><priority>{pr}</priority>{alts}</url>")
     if PREVIEW: return
